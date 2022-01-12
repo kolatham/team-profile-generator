@@ -179,5 +179,39 @@ const addEmployee = () => {
             employee = new Intern (name, id, email, school);
             console.log(employee);
         }
+
+        teamArray.push(employee);
+
+        if (confirmAddEmployee) {
+            return addEmployee(teamArray);
+        } else {
+            return teamArray;
+        }
     })
-}
+};
+
+
+const writeFile = data => {
+    fs.writeFile('./index.html', data, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your team profile has been successfully created! Please check out the index.html!")
+        }
+    })
+};
+
+addManager()
+.then(addEmployee)
+.then(teamArray => {
+    return generateHTML(teamArray);
+})
+
+.then(pageHTML =>{
+    return writeFile(pageHTML);
+})
+
+.catch(err => {
+    console.log(err)
+});
