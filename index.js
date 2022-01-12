@@ -24,6 +24,7 @@ const addManager = () =>{
                 }
             }
         },
+        
         {
             type: 'input',
             name: 'id',
@@ -32,11 +33,13 @@ const addManager = () =>{
                 if (idInput) {
                     return true;
                 }else {
-                    console.log("Please enter in the manager's id.")
+                    console.log("Please enter in the manager's id.");
+                    return false;
                 }
             }
 
         },
+        
         {
           type: 'input',
           name: 'email',
@@ -51,6 +54,7 @@ const addManager = () =>{
               }
           }  
         },
+        
         {
             type: 'input',
             name: 'officeNumber',
@@ -59,7 +63,8 @@ const addManager = () =>{
                 if (officeNumber) {
                     return true;
                 }else {
-                    console.log("Please enter an office number.")
+                    console.log("Please enter an office number.");
+                    return false;
                 }
             }
         }
@@ -73,3 +78,42 @@ const addManager = () =>{
     })
 };
 
+const addEmployee = () => {
+    console.log('');
+    return inquirer.prompt([
+        {
+            type: 'list',
+            name: 'role',
+            message: "Please choose the employee's role.",
+            choices: ['Engineer, Intern']
+        },
+
+        {
+            type: 'input',
+            name: 'name',
+            message: "What is the employee's name?",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                }else {
+                    console.log("Please enter an employee's name");
+                    return false;
+                }
+            }
+        },
+
+        {
+            type: 'input',
+            name: 'id',
+            message: "Please enter the employee's ID.",
+            validate: idInput => {
+                if(idInput) {
+                    return true;
+                }else {
+                    console.log("Please enter the employee's ID.")
+                    return false;
+                }
+            }
+        },
+    ])
+}
