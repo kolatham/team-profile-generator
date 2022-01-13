@@ -103,7 +103,7 @@ generateHTML = (data) => {
 
 }
 
-module.exports = generateHTML;
+
 
 
 const generateTeamPage = function(employeeCards) {
@@ -144,3 +144,5 @@ const generateTeamPage = function(employeeCards) {
     
     `;
 }
+
+module.exports = generateHTML;
