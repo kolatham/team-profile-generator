@@ -103,9 +103,11 @@ generateHTML = (data) => {
 
 }
 
+module.exports = generateHTML;
+
 
 const generateTeamPage = function(employeeCards) {
-    return
+    return`
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -140,8 +142,5 @@ const generateTeamPage = function(employeeCards) {
     </html>
     
     
-    ;
+    `;
 }
-
-
-module.exports = generateHTML;
