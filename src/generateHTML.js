@@ -1,6 +1,6 @@
 
 const generateManager = function (manager) {
-    return
+    return `
     <div class = "col-4 mt-4">
         <div class = "card h-100">
             <div class = "card-header">
@@ -10,18 +10,18 @@ const generateManager = function (manager) {
 
             <div class = "card-body">
                 <p class = "id">ID: ${manager.id}</p>
-                <p class = "email">Email:<a href = "mailto:${manager.email"></a></p>
+                <p class = "email">Email:<a href = "mailto:${manager.email}">${manager.email}</a></p>
                 <p class = "office"> Office Number: ${manager.officeNumber}</p>
             </div>
         
         </div>
-    </div>
+    </div>`
     ;
 }
 
 
 const generateEngineer = function(engineer) {
-    return 
+    return `
     <div class = "col-4 mt-4">
         <div class ="card h-100">
             <div class = "card-header">
@@ -37,12 +37,12 @@ const generateEngineer = function(engineer) {
         
         </div>
     </div>
-}
+`}
 
 
 
 const generateIntern = function(intern) {
-    return
+    return `
     <div class = "col-4 mt-4">
         <div class ="card h-100">
             <div class = "card-header">
@@ -56,7 +56,7 @@ const generateIntern = function(intern) {
                 <p class ="school">School: ${intern.school}</p>
             </div>
         </div>
-    </div>
+    </div>`
 };
 
 
